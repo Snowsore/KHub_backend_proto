@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   res.json({ msg: "Welcome ;)" });
 });
 
-router.use("/users", proxy("localhost:8092/users"));
-router.use("/articles", proxy("localhost:8092/articles"));
+router.use("/users", proxy("localhost:8092"));
+router.use("/articles", proxy("localhost:8092"));
 
 module.exports = router;
