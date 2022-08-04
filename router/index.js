@@ -9,11 +9,12 @@ router.get("/", (req, res) => {
   res.json({ msg: "Welcome ;)" });
 });
 
-const proxyRend =
+const proxyRend = proxy(
   ("localhost:8092",
   {
     proxyReqPathResolver: (req) => req.path,
-  });
+  })
+);
 
 router.use("/users", proxyRend);
 router.use("/articles", proxyRend);
