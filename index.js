@@ -5,7 +5,7 @@ const cors = require("cors");
 const routerRoot = require("./router");
 
 const corsOptions = {
-  origin: "http://localhost:8080",
+  origin: "https://khub.meijinerp.com",
 };
 
 app.use(cors(corsOptions));
