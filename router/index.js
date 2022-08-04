@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 const proxyRend = proxy("localhost:8092", {
-  proxyReqPathResolver: (req) => req.path,
+  proxyReqPathResolver: (req) => req.originalUrl,
 });
 
 router.use("/users", proxyRend);
